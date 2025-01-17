@@ -180,3 +180,32 @@ curl http://localhost:8080/status/your-tracking-id
 - Consider implementing rate limiting for tracking endpoints
 - Add authentication for status endpoint in production
 - Use HTTPS in production environments
+
+## Contributing
+
+Hey there! 👋 Thanks for considering contributing to this project. While it might look complex at first, it's actually quite straightforward to get started!
+
+### Getting Started
+
+Don't let the codebase intimidate you - most issues are suitable for beginners (even if they're not explicitly tagged as good-first-issues). Whether you're new to Go, want to build a client, or improve the code quality, there's something for everyone.
+
+### How to Contribute
+
+1. Look through the issues
+2. Find one that interests you (they're all beginner-friendly!)
+3. Comment on the issue saying you'd like to work on it
+4. I'll guide you through the process
+
+### Need Help?
+
+- Comment on any issue you're interested in - I'm happy to provide guidance
+- Don't worry if you're new to Go or open source
+- No question is too basic - we all start somewhere!
+
+### Before You Dive In
+
+- The project uses Go for backend and Redis for storage
+- Basic understanding of REST APIs is helpful
+- That's it! Everything else we can figure out together
+
+Remember: The best contribution is the one that gets made. Don't hesitate to start small!
