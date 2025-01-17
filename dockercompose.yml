@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SMTP_HOST=${SMTP_HOST}
+      - SMTP_PORT=${SMTP_PORT}
+      - SMTP_USERNAME=${SMTP_USERNAME}
+      - SMTP_PASSWORD=${SMTP_PASSWORD}
+      - REDIS_ADDR=redis:6379
+      - TRACKING_DOMAIN=${TRACKING_DOMAIN}
+      - TRACKING_ID_EXPIRATION=${TRACKING_ID_EXPIRATION:-86400}
+    depends_on:
+      - redis
+    networks:
+      - email-tracker-network
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - email-tracker-network
+    restart: unless-stopped
+
+networks:
+  email-tracker-network:
+    driver: bridge
+
+volumes:
+  redis-data:
